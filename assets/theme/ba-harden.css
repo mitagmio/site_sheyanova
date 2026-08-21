@@ -1,0 +1,150 @@
+/* Before/After: classic vertical page scroll, photos fit viewport width (Format content_page). */
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body.content_page,
+body.simple_page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+}
+
+/* Format uses inline-block on #content_page_wrapper which sizes to intrinsic image width. */
+.page,
+.container,
+#content_page_wrapper,
+._4ORMAT_content_wrapper,
+._4ORMAT_content_page_container {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  box-sizing: border-box;
+}
+
+/* Allow tall BA stacks to scroll vertically. */
+body.simple_page .page,
+body.content_page .page {
+  height: auto !important;
+  max-height: none !important;
+}
+
+.format_comparison_slider,
+._4ORMAT_module_comparison_slider_01,
+#content_page_wrapper ._4ORMAT_content_page_row {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  width: 100% !important;
+  max-width: min(1140px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+  --slider-default-position: 50;
+  --slider-color: #000000;
+  --slider-icon-color: #FFFFFF;
+  --slider-line-thickness: 2;
+  --slider-size: 48;
+  --slider-icon-width: 9px;
+  --slider-icon-height: 14px;
+  --slider-icon-margin: 6px;
+  --slider-icon-shape: 50%;
+}
+
+.comparison_slider__slider_range {
+  --slider-default-position: 50;
+}
+
+.comparison_slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.comparison_slider__slider_wrap,
+.comparison_slider__image_wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+.comparison_slider__slider_image,
+#content_page_wrapper .comparison_slider__slider_image {
+  display: block;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+.comparison_slider__slider_image--2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.comparison_slider__slider_image--1 {
+  position: static;
+}
+
+.comparison_slider__slider_range {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+.comparison_slider__slider_button_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(var(--slider-line-thickness, 6) * 1px);
+  background: var(--slider-color, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.comparison_slider__slider_button {
+  pointer-events: none;
+  position: absolute;
+  width: calc(var(--slider-size, 48) * 1px);
+  height: calc(var(--slider-size, 48) * 1px);
+  border-radius: var(--slider-icon-shape, 50%);
+  background-color: var(--slider-color, #000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comparison_slider__slider_svg {
+  width: var(--slider-icon-width, 9px);
+  height: var(--slider-icon-height, 14px);
+  fill: var(--slider-icon-color, #fff);
+  stroke: var(--slider-icon-color, #fff);
+}
