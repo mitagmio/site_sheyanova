@@ -7,6 +7,20 @@
   transform: none !important;
   visibility: visible !important;
   pointer-events: auto !important;
+  /* Defaults used by comparison-slider.bundle clip-path init */
+  --slider-default-position: 50;
+  --slider-color: #000000;
+  --slider-icon-color: #FFFFFF;
+  --slider-line-thickness: 2;
+  --slider-size: 48;
+  --slider-icon-width: 9px;
+  --slider-icon-height: 14px;
+  --slider-icon-margin: 6px;
+  --slider-icon-shape: 50%;
+}
+
+.comparison_slider__slider_range {
+  --slider-default-position: 50;
 }
 
 .comparison_slider {
