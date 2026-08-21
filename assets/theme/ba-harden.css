@@ -1,0 +1,102 @@
+/* Before/After hardening: visible without Format content_page.js / lazysizes.
+   Comparison CSS is normally scoped to #content_page_wrapper; keep unscoped fallbacks. */
+
+.format_comparison_slider,
+._4ORMAT_module_comparison_slider_01 {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.comparison_slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comparison_slider__slider_wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.comparison_slider__slider_image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.comparison_slider__slider_image--2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.comparison_slider__slider_image--1 {
+  position: static;
+}
+
+.comparison_slider__slider_range {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+.comparison_slider__slider_button_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(var(--slider-line-thickness, 6) * 1px);
+  background: var(--slider-color, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.comparison_slider__slider_button {
+  pointer-events: none;
+  position: absolute;
+  width: calc(var(--slider-size, 48) * 1px);
+  height: calc(var(--slider-size, 48) * 1px);
+  border-radius: var(--slider-icon-shape, 50%);
+  background-color: var(--slider-color, #000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comparison_slider__slider_svg {
+  width: var(--slider-icon-width, 9px);
+  height: var(--slider-icon-height, 14px);
+  fill: var(--slider-icon-color, #fff);
+  stroke: var(--slider-icon-color, #fff);
+}
+
+/* Ensure first home pair (15443192) has slider vars even if theme CSS missed it */
+._4ORMAT_module_comparison_slider_01[data-content-module-id='15443192'] {
+  --slider-default-position: 60;
+  --slider-color: #000000;
+  --slider-icon-color: #FFFFFF;
+  --slider-line-thickness: 2;
+  --slider-size: 48;
+  --slider-icon-width: 9px;
+  --slider-icon-height: 14px;
+  --slider-icon-margin: 6px;
+  --slider-icon-shape: 50%;
+}

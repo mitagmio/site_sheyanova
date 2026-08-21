@@ -1,0 +1,12 @@
+/* Gallery pages: stay visible without waiting on remote Format theme.js fade-in */
+#content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.asset.image.loading,
+.asset.image,
+.asset .img img,
+.assets img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

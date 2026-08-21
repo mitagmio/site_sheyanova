@@ -1,0 +1,10 @@
+/*
+ * jQuery Easing Compatibility v1 - http://gsgd.co.uk/sandbox/jquery.easing.php
+ *
+ * Adds compatibility for applications that use the pre 1.2 easing names
+ *
+ * Copyright (c) 2007 George Smith
+ * Licensed under the MIT License:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
+jQuery.extend(jQuery.easing,{easeIn:function(e,n,u,t,a){return jQuery.easing.easeInQuad(e,n,u,t,a)},easeOut:function(e,n,u,t,a){return jQuery.easing.easeOutQuad(e,n,u,t,a)},easeInOut:function(e,n,u,t,a){return jQuery.easing.easeInOutQuad(e,n,u,t,a)},expoin:function(e,n,u,t,a){return jQuery.easing.easeInExpo(e,n,u,t,a)},expoout:function(e,n,u,t,a){return jQuery.easing.easeOutExpo(e,n,u,t,a)},expoinout:function(e,n,u,t,a){return jQuery.easing.easeInOutExpo(e,n,u,t,a)},bouncein:function(e,n,u,t,a){return jQuery.easing.easeInBounce(e,n,u,t,a)},bounceout:function(e,n,u,t,a){return jQuery.easing.easeOutBounce(e,n,u,t,a)},bounceinout:function(e,n,u,t,a){return jQuery.easing.easeInOutBounce(e,n,u,t,a)},elasin:function(e,n,u,t,a){return jQuery.easing.easeInElastic(e,n,u,t,a)},elasout:function(e,n,u,t,a){return jQuery.easing.easeOutElastic(e,n,u,t,a)},elasinout:function(e,n,u,t,a){return jQuery.easing.easeInOutElastic(e,n,u,t,a)},backin:function(e,n,u,t,a){return jQuery.easing.easeInBack(e,n,u,t,a)},backout:function(e,n,u,t,a){return jQuery.easing.easeOutBack(e,n,u,t,a)},backinout:function(e,n,u,t,a){return jQuery.easing.easeInOutBack(e,n,u,t,a)}});
