@@ -2,12 +2,12 @@
   font-family: 'Cousine';
   font-style: normal;
   font-weight: 400;
-  src: url(cousine/v31/d6lIkaiiRdih4SpPzSM.ttf) format('truetype');
+  src: url(https://fonts.creatorcdn.com/static/s/cousine/v31/d6lIkaiiRdih4SpPzSM.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   font-stretch: normal;
-  src: url(opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');
+  src: url(https://fonts.creatorcdn.com/static/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4n.ttf) format('truetype');
 }
