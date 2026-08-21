@@ -5,6 +5,14 @@ html {
   height: 100%;
   overflow-y: hidden !important;
   overflow-x: auto !important;
+  /* Hide OS scrollbar — Windows thumb reads as black bumps under the gallery. */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 body.gallery,
 body.gallery_page {
@@ -14,6 +22,14 @@ body.gallery_page {
   margin: 0;
   overflow-y: hidden !important;
   overflow-x: auto !important;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+body.gallery::-webkit-scrollbar,
+body.gallery_page::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 body.gallery .page {
   height: 100% !important;
