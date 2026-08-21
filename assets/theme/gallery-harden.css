@@ -1,12 +1,77 @@
-/* Gallery pages: stay visible without waiting on remote Format theme.js fade-in */
+/* Panorama gallery: fit photos to viewport height; horizontal scroll via wheel / click arrows.
+   Vertical page scroll is disabled — matches live Format Pattern gallery. */
+
+html {
+  height: 100%;
+  overflow-y: hidden !important;
+  overflow-x: auto !important;
+}
+body.gallery,
+body.gallery_page {
+  height: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
+  margin: 0;
+  overflow-y: hidden !important;
+  overflow-x: auto !important;
+}
+body.gallery .page {
+  height: 100% !important;
+  max-height: 100vh !important;
+  max-height: 100dvh !important;
+  overflow: visible !important;
+}
+
 #content {
   opacity: 1 !important;
   visibility: visible !important;
+  height: auto;
+  max-width: none;
+  margin-top: 0 !important;
+  min-height: 0 !important;
 }
-.asset.image.loading,
-.asset.image,
-.asset .img img,
-.assets img {
+
+.gallery .assets,
+.gallery #assets {
+  overflow: visible;
+  height: 100%;
+  font-size: 0;
+  white-space: nowrap;
+}
+.gallery #assets_wrap {
+  overflow: visible;
+  height: 100%;
+}
+.gallery .asset {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
   opacity: 1 !important;
   visibility: visible !important;
+}
+.gallery .asset.loading {
+  background: none !important;
+}
+.gallery .asset .wrap {
+  height: 100%;
+  display: inline-block;
+  max-height: 100%;
+  width: auto;
+}
+.gallery .asset.image .img {
+  height: 100%;
+  width: auto;
+  text-align: center;
+  min-width: 0;
+}
+.gallery .asset img {
+  width: auto !important;
+  max-width: none !important;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100% !important;
+  max-height: 100% !important;
+  opacity: 1 !important;
 }

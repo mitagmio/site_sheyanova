@@ -1,13 +1,76 @@
-/* Before/After hardening: visible without Format content_page.js / lazysizes.
-   Comparison CSS is normally scoped to #content_page_wrapper; keep unscoped fallbacks. */
+/* BA as viewport-height horizontal strip (wheel → horizontal, no vertical page scroll). */
+
+html {
+  height: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+body.content_page,
+body.simple_page {
+  height: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
+  margin: 0;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+body.simple_page .page,
+body.content_page .page {
+  height: 100% !important;
+  max-height: 100vh !important;
+  max-height: 100dvh !important;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  min-width: 100%;
+  max-width: none !important;
+}
+
+.theme_header {
+  flex: 0 0 auto;
+  width: 100vw;
+  position: sticky;
+  left: 0;
+  z-index: 20;
+}
+
+main.container.ba-hstrip,
+#content_page_wrapper,
+._4ORMAT_content_wrapper,
+._4ORMAT_content_page_container {
+  display: block !important;
+  width: max-content !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+._4ORMAT_content_page_container {
+  font-size: 0;
+  white-space: nowrap;
+  height: 100%;
+}
 
 .format_comparison_slider,
-._4ORMAT_module_comparison_slider_01 {
+._4ORMAT_module_comparison_slider_01,
+#content_page_wrapper ._4ORMAT_content_page_row {
+  display: inline-block !important;
+  vertical-align: top;
+  white-space: normal;
+  font-size: 1rem;
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  /* Defaults used by comparison-slider.bundle clip-path init */
+  width: auto !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
   --slider-default-position: 50;
   --slider-color: #000000;
   --slider-icon-color: #FFFFFF;
@@ -26,27 +89,38 @@
 .comparison_slider {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  box-sizing: border-box;
 }
 
-.comparison_slider__slider_wrap {
+.comparison_slider__slider_wrap,
+.comparison_slider__image_wrap {
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: auto !important;
+  max-width: none !important;
+  height: 100% !important;
+  box-sizing: border-box;
 }
 
-.comparison_slider__slider_image {
+.comparison_slider__slider_image,
+#content_page_wrapper .comparison_slider__slider_image {
   display: block;
-  max-width: 100%;
-  height: auto;
-  width: 100%;
+  width: auto !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box;
 }
 
 .comparison_slider__slider_image--2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto !important;
+  height: 100% !important;
 }
 
 .comparison_slider__slider_image--1 {
@@ -102,15 +176,25 @@
   stroke: var(--slider-icon-color, #fff);
 }
 
-/* Ensure first home pair (15443192) has slider vars even if theme CSS missed it */
-._4ORMAT_module_comparison_slider_01[data-content-module-id='15443192'] {
-  --slider-default-position: 60;
-  --slider-color: #000000;
-  --slider-icon-color: #FFFFFF;
-  --slider-line-thickness: 2;
-  --slider-size: 48;
-  --slider-icon-width: 9px;
-  --slider-icon-height: 14px;
-  --slider-icon-margin: 6px;
-  --slider-icon-shape: 50%;
+/* Fixed side arrows: step one BA pair */
+.ba-nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  width: 44px;
+  height: 72px;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.ba-nav-arrow:hover { background: rgba(0, 0, 0, 0.55); }
+.ba-nav-arrow--prev { left: 8px; }
+.ba-nav-arrow--next { right: 8px; }
+.ba-nav-arrow svg { width: 18px; height: 30px; fill: currentColor; }
+.ba-nav-arrow[disabled] { opacity: 0.25; pointer-events: none; }
