@@ -3507,8 +3507,23 @@ html body #using,
     display: none !important;
   }
 
+  /* Non-gallery: keep header in document flow so titles (Contact/About/Rates)
+     are not clipped under a fixed bar. Theme forces position:fixed ≤767; cancel
+     that here. Galleries keep fixed via gallery-harden.css. */
+  body:not(.gallery) #themeHeader,
+  body:not(.gallery) .theme_header {
+    position: relative !important;
+    top: auto !important;
+  }
+  /* theme.js sets .container { margin-top: headerH } for fixed headers — undo
+     when header is in-flow (BA / content pages). */
+  body:not(.gallery) .container,
+  body:not(.gallery) main.container {
+    margin-top: 0 !important;
+  }
+
   #themeHeader .padding-div {
-    /* Equal inset: screen→DARYIA and SHEYANOVA→photo (burger stays absolute). */
+    /* Equal inset: screen→DARYIA and SHEYANOVA→content/photo (burger stays absolute). */
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 7%;
