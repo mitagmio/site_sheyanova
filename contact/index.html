@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://sheyanova.art/contact"/>
 <link href="/static/theme_api/v1/hosted_fonts-58e499298cb6db37c90c2bd6bd2ad287c8423ad12d9c2cc346a2af9afc8b7fd4.css" media="screen" rel="stylesheet"/>
 <link href="/static/theme_api/vendor/webtype_fonts.min-a27384810945198dd373502796bfbada62cc8409c49831a8778ac894e78f7749.css" media="screen" rel="stylesheet"/>
-<link href="/assets/theme/stylesheet.css?v=7" media="screen" rel="stylesheet"/>
+<link href="/assets/theme/stylesheet.css?v=8" media="screen" rel="stylesheet"/>
 <link href="/assets/theme/about.css?v=2" media="screen" rel="stylesheet"/>
 <link href="/static/theme_api/v1/960_simple-80ab8eb2695abe415bd536608db207267db1a467f2841da1c01b06c3559dd9c6.css" media="screen" rel="stylesheet"/>
 <link href="/static/_common/animation-7fc12d665fca943072e7f3c6c84d756b935958c9d92f8a940de7dcfd69c2b253.css" media="screen" rel="stylesheet"/>
@@ -157,6 +157,10 @@
 .contact_form.is-busy input[type=submit]{opacity:.6;pointer-events:none}
 .contact_form{position:relative}
 .contact_form_hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+@media only screen and (max-width:767px){
+.contact_form .row.naked>.sixcol{width:100%!important;float:none!important;margin:0 0 10px!important;display:block;clear:both}
+.contact_form .row.naked>.sixcol input{border-right-width:1px}
+}
 </style>
 <form id="contact_form_b54d97c37cff41fe" class="email_form contact_form" method="post" action="https://api.sheyanova.art/api/contact" novalidate>
 <div class="error_messages contact_form__status" role="status" aria-live="polite"></div>

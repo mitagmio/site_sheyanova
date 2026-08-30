@@ -3468,3 +3468,52 @@ html body #using,
   pointer-events: none;
   z-index: 3;
 }
+
+/* Contact form: stack Name / Email full-width on narrow screens (module_base
+   only collapses .sixcol inside [data-content-module-removable] at ≤640px). */
+@media only screen and (max-width: 767px) {
+  #content_page_wrapper .email_form.contact_form .row.naked > .sixcol,
+  #content_page_wrapper .contact_form .row.naked > .sixcol {
+    width: 100% !important;
+    float: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: block;
+    clear: both;
+  }
+  #content_page_wrapper .email_form.contact_form .row.naked > .sixcol input,
+  #content_page_wrapper .contact_form .row.naked > .sixcol input {
+    border-right-width: 1px;
+  }
+}
+
+/* Mobile header: equal vertical padding around two-line logo (theme zeros
+   desktop 33px header padding; absolute vertical-center left logo flush-top). */
+@media only screen and (max-width: 767px),
+  only screen and (max-width: 850px) and (orientation: landscape) {
+  #themeHeader .padding-div {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 7%;
+    padding-right: 7%;
+    box-sizing: border-box;
+  }
+  .page #themeHeader .theme_logo h1,
+  .page #themeHeader .theme_logo .logo,
+  #themeHeader .padding-div .theme_logo h1.logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    max-width: 75%;
+  }
+  #themeHeader .padding-div > .theme_logo {
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+}

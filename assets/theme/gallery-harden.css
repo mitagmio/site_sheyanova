@@ -132,7 +132,7 @@ body.gallery:not(.lookbook-open) .theme_header {
     max-width: 100% !important;
     overflow: hidden !important;
     /* Fixed mobile header overlays content; keep frames below it. */
-    padding-top: var(--gallery-header-h, 70px);
+    padding-top: var(--gallery-header-h, 96px);
     height: 100% !important;
     max-height: 100% !important;
     box-sizing: border-box;
