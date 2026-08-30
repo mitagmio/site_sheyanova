@@ -3575,3 +3575,16 @@ html body #using,
   }
 }
 
+
+/* Rates/Contact/About: never sit under header on phone/tablet */
+@media only screen and (max-width: 1100px) {
+  body.rates #themeHeader,
+  body.rates .theme_header,
+  body.content_page #themeHeader,
+  body.content_page .theme_header,
+  body.about #themeHeader,
+  body.about .theme_header {
+    position: relative !important;
+    top: auto !important;
+  }
+}
