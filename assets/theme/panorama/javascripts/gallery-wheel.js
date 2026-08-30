@@ -14,6 +14,28 @@
   }
 
   function scrollRoot() {
+    var candidates = [
+      document.getElementById('assets'),
+      document.querySelector('.gallery .assets'),
+      document.getElementById('assets_wrap')
+    ];
+    var i;
+    var el;
+    var ox;
+    for (i = 0; i < candidates.length; i++) {
+      el = candidates[i];
+      if (!el) continue;
+      ox = window.getComputedStyle(el).overflowX;
+      if ((ox === 'auto' || ox === 'scroll') && el.scrollWidth > el.clientWidth + 1) {
+        return el;
+      }
+    }
+    for (i = 0; i < candidates.length; i++) {
+      el = candidates[i];
+      if (!el) continue;
+      ox = window.getComputedStyle(el).overflowX;
+      if (ox === 'auto' || ox === 'scroll') return el;
+    }
     var html = document.documentElement;
     var body = document.body;
     var htmlOverflow = window.getComputedStyle(html).overflowX;

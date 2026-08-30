@@ -38,7 +38,45 @@
     wrap.style.paddingRight = '';
   }
 
+  function stripScroller() {
+    var candidates = [
+      document.getElementById('assets'),
+      document.querySelector('.gallery .assets'),
+      document.getElementById('assets_wrap')
+    ];
+    var i;
+    var el;
+    var ox;
+    for (i = 0; i < candidates.length; i++) {
+      el = candidates[i];
+      if (!el) continue;
+      ox = window.getComputedStyle(el).overflowX;
+      if ((ox === 'auto' || ox === 'scroll') && el.scrollWidth > el.clientWidth + 1) {
+        return el;
+      }
+    }
+    for (i = 0; i < candidates.length; i++) {
+      el = candidates[i];
+      if (!el) continue;
+      ox = window.getComputedStyle(el).overflowX;
+      if (ox === 'auto' || ox === 'scroll') return el;
+    }
+    return null;
+  }
+
+  function syncHeaderOffset() {
+    if (!galleryPage() || lookbookOpen()) return;
+    var header = document.getElementById('themeHeader') || document.querySelector('.theme_header');
+    var content = document.getElementById('content');
+    if (!header || !content) return;
+    var fixed = window.getComputedStyle(header).position === 'fixed';
+    var h = fixed ? Math.ceil(header.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--gallery-header-h', h + 'px');
+  }
+
   function scrollRoot() {
+    var strip = stripScroller();
+    if (strip) return strip;
     var html = document.documentElement;
     var body = document.body;
     var htmlOverflow = window.getComputedStyle(html).overflowX;
@@ -136,9 +174,12 @@
     left = clampScroll(left);
     var root = scrollRoot();
     root.scrollLeft = left;
-    if (document.body !== root) document.body.scrollLeft = left;
-    var html = document.documentElement;
-    if (html !== root) html.scrollLeft = left;
+    /* Only mirror onto body/html when they are the scroller (desktop). */
+    if (root === document.body || root === document.documentElement || root === document.scrollingElement) {
+      if (document.body !== root) document.body.scrollLeft = left;
+      var html = document.documentElement;
+      if (html !== root) html.scrollLeft = left;
+    }
   }
 
   function scrollToLeft(left, instant, done) {
@@ -294,6 +335,8 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     document.addEventListener('scroll', onScroll, { passive: true, capture: true });
     if (document.body) document.body.addEventListener('scroll', onScroll, { passive: true });
+    var strip = stripScroller();
+    if (strip) strip.addEventListener('scroll', onScroll, { passive: true });
 
     window.addEventListener(
       'wheel',
@@ -307,13 +350,16 @@
 
     window.addEventListener('resize', function () {
       if (!galleryPage() || lookbookOpen()) return;
+      syncHeaderOffset();
       goTo(currentIndex(), true);
     });
 
+    syncHeaderOffset();
     var hash = location.hash.match(/^#(\d+)$/);
     var start = hash ? parseInt(hash[1], 10) : 0;
     requestAnimationFrame(function () {
       stripSpacers();
+      syncHeaderOffset();
       goTo(start, true);
       requestAnimationFrame(function () {
         goTo(start, true);
@@ -332,6 +378,7 @@
     function recenter() {
       if (lookbookPage() || !galleryPage() || userPaged) return;
       stripSpacers();
+      syncHeaderOffset();
       var start = hash ? parseInt(hash[1], 10) : 0;
       goTo(start, true);
     }

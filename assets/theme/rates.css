@@ -2,8 +2,15 @@
    Header/nav comes from stylesheet.css (scoped to .simple / .gallery / .listing).
    Type stack matches body + .theme_menu: News Gothic Regular 14px. */
 
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body.rates {
   color: #2f2f2f;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body.rates.simple:not(.product_page) #content {
