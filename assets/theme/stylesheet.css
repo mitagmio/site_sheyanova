@@ -3488,7 +3488,9 @@ html body #using,
 }
 
 /* Mobile header: light top padding (logo not flush), tight bottom so content
-   sits just under the bar (Rates reference ~8–12px top). */
+   sits just under the bar (Rates reference ~8–12px top). Full two-line name
+   must fit beside the burger — theme h1{32px!important} + max-width:75% +
+   overflow:hidden was clipping "SHEYANOVA" to "SHEYANC…". */
 @media only screen and (max-width: 767px),
   only screen and (max-width: 850px) and (orientation: landscape) {
   #themeHeader .padding-div {
@@ -3498,9 +3500,16 @@ html body #using,
     padding-right: 7%;
     box-sizing: border-box;
   }
+  #themeHeader .padding-div > .theme_logo {
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    max-width: calc(100% - 48px);
+  }
   .page #themeHeader .theme_logo h1,
   .page #themeHeader .theme_logo .logo,
-  #themeHeader .padding-div .theme_logo h1.logo {
+  #themeHeader .padding-div .theme_logo h1.logo,
+  #themeHeader .padding-div .theme_logo h1.logo a {
     position: relative;
     top: auto;
     left: auto;
@@ -3509,11 +3518,12 @@ html body #using,
     -ms-transform: none;
     -o-transform: none;
     transform: none;
-    max-width: 75%;
-  }
-  #themeHeader .padding-div > .theme_logo {
-    min-height: 0;
+    max-width: 100%;
+    width: auto;
     max-height: none;
     overflow: visible;
+    white-space: normal;
+    font-size: 22px !important;
+    line-height: 1.15 !important;
   }
 }
