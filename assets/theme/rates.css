@@ -1,0 +1,1004 @@
+/* Rates page — 3×2 photo tiles + overlay forms, using sheyanova chrome.
+   Header/nav comes from stylesheet.css (scoped to .simple / .gallery / .listing).
+   Type stack matches body + .theme_menu: News Gothic Regular 14px. */
+
+body.rates {
+  color: #2f2f2f;
+}
+
+body.rates.simple:not(.product_page) #content {
+  padding: 4px 0 0;
+}
+
+body.rates .rates-intro,
+body.rates .rates-intro-copy,
+body.rates .rates-kicker,
+body.rates.rates-page .rates-intro,
+body.rates.rates-page .rates-kicker {
+  text-align: center;
+}
+
+body.rates .rates-intro {
+  padding: 4px 20px 0;
+}
+
+body.rates .rates-intro ._4ORMAT_content_page_container,
+body.rates .rates-intro ._4ORMAT_content_page_row,
+body.rates .rates-intro .eightcol,
+body.rates .rates-intro .rich-text,
+body.rates .rates-intro p,
+body.rates .rates-intro h2,
+body.rates .rates-intro .xl-headline,
+body.rates .rates-intro .rates-kicker,
+body.rates .rates-intro-copy,
+body.rates .rates-intro-copy p {
+  float: none !important;
+  width: 100% !important;
+  max-width: 36em !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  background: transparent !important;
+}
+
+body.rates .rates-intro .rates-kicker,
+body.rates .rates-intro h2.rates-kicker,
+body.rates .rates-intro .xl-headline,
+body.rates .rates-intro h2.xl-headline,
+body.rates #content_page_wrapper h2.rates-kicker,
+body.rates #content_page_wrapper h2.xl-headline,
+div#content_page_wrapper.rates-intro h2.rates-kicker,
+div#content_page_wrapper.rates-intro h2.xl-headline {
+  color: #332e54;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  font-style: normal;
+  line-height: 1.3 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 6px !important;
+}
+
+body.rates .rates-intro p {
+  color: #706c87;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 2px;
+}
+
+body.rates .rates-intro p:last-child {
+  margin-bottom: 0;
+}
+
+body.rates .rates-intro ._4ORMAT_content_page_row,
+body.rates .rates-intro ._4ORMAT_content_page_container {
+  padding: 0 !important;
+}
+
+/* Banner-choice page (intro + tiles) uses the same face as .theme_menu / body. */
+body.rates .rates-intro,
+body.rates .rates-intro *,
+body.rates .rate-banner,
+body.rates .rate-banner * {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif !important;
+}
+
+.rates-banners {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 960px);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 8px 10px 16px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.rate-banner {
+  position: relative;
+  display: block;
+  container-type: inline-size;
+  width: 100%;
+  aspect-ratio: var(--rate-banner-aspect, 3 / 4);
+  height: auto;
+  min-height: var(--rate-banner-min-height, 0px);
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: inherit;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-banner.is-placeholder {
+  border-color: rgba(47, 47, 47, 0.14);
+}
+
+.rate-banner__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.rate-banner:hover .rate-banner__img,
+.rate-banner:focus .rate-banner__img {
+  opacity: 0.88;
+}
+
+.rate-banner:focus,
+.rate-banner:focus-visible {
+  outline: 2px solid #2f2f2f;
+  outline-offset: 3px;
+}
+
+.rate-banner__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8% 6%;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(47, 47, 47, 0.45);
+  pointer-events: none;
+}
+
+/* Frosted label behind the whole text stack (price + from + caption). */
+.rate-banner__plate {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__plate {
+  width: max-content;
+  max-width: calc(100% - 4px);
+  padding: 12px 16px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  background-color: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(47, 47, 47, 0.14);
+}
+
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__meta {
+  width: auto;
+}
+
+/* Plate is the readability aid — keep letter glow from competing with the panel. */
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__overlay {
+  text-shadow: none;
+}
+
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__currency,
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__price,
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__from,
+body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
+  text-shadow: none;
+}
+
+.rate-banner.is-placeholder .rate-banner__overlay {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.rate-banner.is-placeholder .rate-banner__currency,
+.rate-banner.is-placeholder .rate-banner__price,
+.rate-banner.is-placeholder .rate-banner__from,
+.rate-banner.is-placeholder .rate-banner__caption {
+  color: #1a1a1a;
+  opacity: 1;
+  -webkit-text-fill-color: #1a1a1a;
+  -webkit-text-stroke: 0;
+}
+
+/* Auto dark / White: plain white fill + soft dark shadow. */
+.rate-banner--dark .rate-banner__overlay {
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(47, 47, 47, 0.45);
+}
+
+.rate-banner--dark .rate-banner__currency,
+.rate-banner--dark .rate-banner__price,
+.rate-banner--dark .rate-banner__from,
+.rate-banner--dark .rate-banner__caption {
+  color: #fff;
+  opacity: 1;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 0;
+}
+
+/* Auto light / Charcoal preset: solid #1a1a1a, full opacity, no outline stroke. */
+.rate-banner--light .rate-banner__overlay {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.rate-banner--light .rate-banner__currency,
+.rate-banner--light .rate-banner__price,
+.rate-banner--light .rate-banner__from,
+.rate-banner--light .rate-banner__caption {
+  color: #1a1a1a;
+  opacity: 1;
+  -webkit-text-fill-color: #1a1a1a;
+  -webkit-text-stroke: 0;
+  paint-order: normal;
+  text-shadow: none;
+}
+
+/* Manual White + black outline preset only (not used by Auto). */
+.rate-banner--outline .rate-banner__overlay {
+  color: #fff;
+  text-shadow: none;
+}
+
+.rate-banner--outline .rate-banner__currency,
+.rate-banner--outline .rate-banner__price,
+.rate-banner--outline .rate-banner__from,
+.rate-banner--outline .rate-banner__caption {
+  color: #fff;
+  opacity: 1;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 0.045em #000;
+  paint-order: stroke fill;
+  text-shadow:
+    0 0 1px #000,
+    0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+/* Manual override: --rate-text / color / text-shadow on .rate-banner__overlay */
+.rate-banner--custom .rate-banner__overlay {
+  text-shadow: none;
+}
+
+.rate-banner--custom .rate-banner__currency,
+.rate-banner--custom .rate-banner__price,
+.rate-banner--custom .rate-banner__from,
+.rate-banner--custom .rate-banner__caption {
+  color: var(--rate-text, inherit);
+  opacity: 1;
+  -webkit-text-fill-color: var(--rate-text, currentColor);
+  -webkit-text-stroke: 0;
+  paint-order: normal;
+}
+
+.rate-banner__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.rate-banner__price-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.12em;
+  line-height: 1;
+}
+
+.rate-banner__currency {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: clamp(0.55rem, 2.2vw, 0.78rem);
+  font-weight: normal;
+  line-height: 1;
+  margin-top: 0.12em;
+}
+
+.rate-banner__price {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: clamp(1.15rem, 5.5vw, 1.85rem);
+  font-weight: bold;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.rate-banner__from {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: clamp(0.45rem, 1.5vw, 0.62rem);
+  font-weight: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 0.28em;
+  line-height: 1.2;
+  opacity: 1;
+  color: inherit;
+}
+
+.rate-banner__caption {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: clamp(0.7rem, 3.2vw, 1.05rem);
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-top: 0.4em;
+}
+
+@supports (font-size: 1cqi) {
+  .rate-banner__currency {
+    font-size: clamp(0.55rem, 8cqi, 0.78rem);
+  }
+  .rate-banner__price {
+    font-size: clamp(1.15rem, 18cqi, 1.85rem);
+  }
+  .rate-banner__from {
+    font-size: clamp(0.45rem, 5cqi, 0.62rem);
+  }
+  .rate-banner__caption {
+    font-size: clamp(0.7rem, 9cqi, 1.05rem);
+  }
+}
+
+.rate-modal[hidden] {
+  display: none !important;
+}
+
+.rate-modal,
+.rates-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 16px 8vh;
+  overflow: auto;
+  color: #706c87;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.rate-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.rate-modal__panel,
+.rates-dialog .rate-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(880px, 100%);
+  background: #ffffff;
+  color: #706c87;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.6;
+  padding: 56px 22px 36px;
+  margin: auto;
+}
+
+.rate-modal__panel *,
+.rate-modal__panel *::before,
+.rate-modal__panel *::after,
+.rates-dialog .rate-form,
+.rates-dialog .rate-form * {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-modal__close,
+.rates-dialog-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #2f2f2f;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.rates-dialog-close__icon {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.rates-dialog-close__icon::before,
+.rates-dialog-close__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 16px;
+  margin: 0;
+  background: currentColor;
+  transform-origin: center center;
+}
+
+.rates-dialog-close__icon::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.rates-dialog-close__icon::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.rate-modal__close:hover,
+.rate-modal__close:focus,
+.rates-dialog-close:hover,
+.rates-dialog-close:focus {
+  color: #2f2f2f;
+  background: rgba(47, 47, 47, 0.06);
+  outline: none;
+}
+
+.rates-dialog-close:focus-visible {
+  outline: 2px solid #2f2f2f;
+  outline-offset: 0;
+}
+
+.rate-form-caption {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0;
+  color: #706c87;
+  margin: 0 0 4px;
+}
+
+.rate-form-heading {
+  margin: 0 0 14px;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #332e54;
+  line-height: 1.3;
+}
+
+.rate-step {
+  margin: 18px 0 10px;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #706c87;
+}
+
+.rate-field,
+.rate-fieldset {
+  display: block;
+  width: 100%;
+  margin: 0 0 12px;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.rate-fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.rate-fieldset legend {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  color: #706c87;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.rate-hint {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #706c87;
+  margin: 0 0 8px;
+}
+
+.rate-check,
+.rate-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.rate-check input,
+.rate-radio input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.rate-retouch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.rate-retouch-grid > .rate-retouch {
+  height: 100%;
+  min-height: 100%;
+  align-self: stretch;
+}
+
+.rate-retouch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  gap: 8px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 10px;
+  background: #ffffff;
+  color: #706c87;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+  list-style: none;
+  overflow: hidden;
+}
+
+.rate-retouch > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.rate-retouch__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: transparent;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+}
+
+.rate-retouch__frame img,
+.rate-modal .rate-retouch__frame img,
+.rates-dialog .rate-retouch__frame img,
+.rate-retouch img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  max-height: none;
+  object-fit: contain !important;
+  object-position: center center;
+  display: block;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.rate-retouch__plaque {
+  position: absolute;
+  right: 8px;
+  bottom: 14px;
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: calc(100% - 16px);
+  padding: 7px 12px;
+  background: #2f2f2f;
+  color: #ffffff;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.rate-retouch__text {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+  flex: 1;
+  min-height: 0;
+}
+
+.rate-retouch:hover {
+  background: #ffffff;
+  border-color: #2f2f2f;
+}
+
+.rate-retouch:has(input:checked),
+.rate-retouch.is-selected {
+  border-color: #2f2f2f;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px #2f2f2f;
+  outline: 1px solid #2f2f2f;
+  outline-offset: 0;
+  accent-color: #2f2f2f;
+}
+
+.rate-retouch:has(input:focus-visible) {
+  outline: 2px solid #2f2f2f;
+  outline-offset: 2px;
+}
+
+.rate-date {
+  position: relative;
+  display: block;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-date__row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.rate-date__input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rate-date__btn {
+  flex: 0 0 auto;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-date__btn:hover,
+.rate-date__btn:focus {
+  background: rgba(47, 47, 47, 0.06);
+  outline: none;
+}
+
+.rate-date__btn:focus-visible {
+  outline: 2px solid #2f2f2f;
+  outline-offset: 1px;
+}
+
+.rate-date__pop {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  width: min(280px, 100%);
+  padding: 12px;
+  background: #ffffff;
+  color: #706c87;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  box-shadow: 0 8px 24px rgba(47, 47, 47, 0.12);
+  box-sizing: border-box;
+}
+
+.rate-date__pop[hidden] {
+  display: none !important;
+}
+
+.rate-date__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.rate-date__month {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+.rate-date__nav-btn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #2f2f2f;
+  cursor: pointer;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.rate-date__nav-btn:hover,
+.rate-date__nav-btn:focus {
+  background: rgba(47, 47, 47, 0.06);
+}
+
+.rate-date__dow,
+.rate-date__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.rate-date__dow {
+  margin: 0 0 6px;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #706c87;
+}
+
+.rate-date__day {
+  width: 100%;
+  min-height: 32px;
+  border: 0;
+  background: transparent;
+  color: #2f2f2f;
+  cursor: pointer;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  padding: 0;
+}
+
+.rate-date__day:hover:not(:disabled) {
+  background: rgba(47, 47, 47, 0.06);
+}
+
+.rate-date__day.is-selected {
+  background: #2f2f2f;
+  color: #ffffff;
+}
+
+.rate-date__day.is-today:not(.is-selected) {
+  box-shadow: inset 0 0 0 1px #2f2f2f;
+}
+
+.rate-date__day:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.rate-form .rate-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rate-form {
+  position: relative;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.rate-form__status {
+  margin: 0 0 14px;
+  min-height: 1.2em;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+}
+
+.rate-form__status.is-ok {
+  color: #2a7a3a;
+}
+
+.rate-form__status.is-err {
+  color: #c00;
+}
+
+.rate-form.is-busy input[type="submit"],
+.rate-form.is-sent input[type="submit"] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.rate-form-done {
+  margin-left: 10px;
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 2px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-form-done:hover,
+.rate-form-done:focus {
+  background: rgba(47, 47, 47, 0.06);
+}
+
+.rate-form input[type="submit"] {
+  height: auto;
+  width: auto;
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 2px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+}
+
+.rate-form input[type="submit"]:hover,
+.rate-form input[type="submit"]:focus {
+  background: rgba(47, 47, 47, 0.06);
+}
+
+.rate-modal .rate-form input[type="text"],
+.rate-modal .rate-form input[type="email"],
+.rate-modal .rate-form input[type="tel"],
+.rate-modal .rate-form input[type="number"],
+.rate-modal .rate-form select,
+.rate-modal .rate-form textarea,
+.rates-dialog .rate-form input[type="text"],
+.rates-dialog .rate-form input[type="email"],
+.rates-dialog .rate-form input[type="tel"],
+.rates-dialog .rate-form input[type="number"],
+.rates-dialog .rate-form select,
+.rates-dialog .rate-form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  color: #706c87;
+  background: transparent;
+  outline: none;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  padding: 12px 14px;
+  margin: 0 0 10px;
+}
+
+.rate-modal .rate-form input[type="text"],
+.rate-modal .rate-form input[type="email"],
+.rate-modal .rate-form input[type="tel"],
+.rate-modal .rate-form input[type="number"],
+.rate-modal .rate-form select,
+.rates-dialog .rate-form input[type="text"],
+.rates-dialog .rate-form input[type="email"],
+.rates-dialog .rate-form input[type="tel"],
+.rates-dialog .rate-form input[type="number"],
+.rates-dialog .rate-form select {
+  height: 48px;
+}
+
+.rate-modal .rate-form option,
+.rate-modal .rate-form optgroup,
+.rates-dialog .rate-form option,
+.rates-dialog .rate-form optgroup {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.rate-modal .rate-form input::placeholder,
+.rate-modal .rate-form textarea::placeholder,
+.rates-dialog .rate-form input::placeholder,
+.rates-dialog .rate-form textarea::placeholder {
+  font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #706c87;
+  opacity: 0.7;
+}
+
+body.rate-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .rates-banners {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 560px);
+  }
+}
+
+@media (max-width: 700px) {
+  .rate-retouch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .rates-banners {
+    grid-template-columns: 1fr;
+    width: min(100%, 280px);
+  }
+  .rate-modal__panel {
+    padding: 56px 16px 28px;
+  }
+}

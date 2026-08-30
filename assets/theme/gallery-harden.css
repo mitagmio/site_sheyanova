@@ -42,7 +42,10 @@ body.gallery .page {
 .gallery #assets_wrap {
   overflow: visible;
   height: 100%;
+  font-size: 0;
+  white-space: nowrap;
 }
+
 .gallery .asset {
   display: inline-block;
   height: 100%;
@@ -74,5 +77,9 @@ body.gallery .page {
   vertical-align: middle;
   height: 100% !important;
   max-height: 100% !important;
-  opacity: 1 !important;
+}
+
+body.gallery:not(.lookbook-open) #themeHeader,
+body.gallery:not(.lookbook-open) .theme_header {
+  z-index: 4000;
 }

@@ -1,0 +1,159 @@
+/* Masonry lookbook grid — Tilda-like columns, mixed ratios, no row cap.
+   Header/nav chrome comes from stylesheet.css, which is scoped to
+   .simple / .gallery / .listing. Lookbook body must include `simple`. */
+
+.lookbook-main {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 10px 48px;
+}
+
+.lookbook-grid {
+  column-width: 280px;
+  column-gap: 10px;
+  width: 100%;
+}
+
+.lookbook-tile {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.lookbook-tile:focus {
+  outline: 2px solid #ff0000;
+  outline-offset: 2px;
+}
+
+.lookbook-tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  vertical-align: top;
+}
+
+.lookbook-tile img:not(.is-ready) {
+  min-height: 8rem;
+  background: #f6f1f1;
+}
+
+#lookbook-overlay .lookbook-close {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  z-index: 10002;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(47, 47, 47, 0.72);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#lookbook-overlay .lookbook-close:hover,
+#lookbook-overlay .lookbook-close:focus {
+  background: rgba(47, 47, 47, 0.92);
+}
+
+#lookbook-overlay .lookbook-nav {
+  position: fixed;
+  top: 50%;
+  z-index: 10002;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(47, 47, 47, 0.55);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  opacity: 0.92;
+  transition: opacity 0.35s ease, background 0.2s ease, visibility 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#lookbook-overlay .lookbook-nav svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+#lookbook-overlay .lookbook-nav-prev {
+  left: 14px;
+}
+
+#lookbook-overlay .lookbook-nav-next {
+  right: 14px;
+}
+
+#lookbook-overlay .lookbook-nav:hover,
+#lookbook-overlay .lookbook-nav:focus {
+  background: rgba(47, 47, 47, 0.88);
+  opacity: 1;
+  outline: none;
+}
+
+#lookbook-overlay .lookbook-nav:disabled {
+  opacity: 0.22;
+  cursor: default;
+  pointer-events: none;
+}
+
+#lookbook-overlay.lookbook-idle .lookbook-nav:not(:disabled) {
+  opacity: 0.4;
+}
+
+#lookbook-overlay.lookbook-idle .lookbook-nav:hover,
+#lookbook-overlay.lookbook-idle .lookbook-nav:focus {
+  opacity: 1;
+}
+
+#lookbook-overlay.cursor-left {
+  cursor: w-resize;
+}
+
+#lookbook-overlay.cursor-right {
+  cursor: e-resize;
+}
+
+body.lookbook-open .lookbook-main,
+body.lookbook-open .page {
+  visibility: hidden;
+}
+
+/* Neighbors peeking in the viewport are soft; the centered slide stays sharp. */
+body.lookbook-open #lookbook-overlay .asset {
+  overflow: hidden;
+}
+
+body.lookbook-open #lookbook-overlay .asset img {
+  filter: blur(12px);
+  opacity: 0.58;
+  transform: scale(1.01);
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+body.lookbook-open #lookbook-overlay .asset.active img {
+  filter: none;
+  opacity: 1;
+  transform: none;
+}

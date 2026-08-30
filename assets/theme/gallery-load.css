@@ -1,0 +1,147 @@
+/* Per-frame loader: 1px charcoal pulse on #f6f1f1 until that photo decodes.
+   Never covers .theme_menu / #themeHeader. Full-strip overlay is retired. */
+
+body.gallery:not(.lookbook-open) #themeHeader,
+body.gallery:not(.lookbook-open) .theme_header,
+body.content_page #themeHeader,
+body.content_page .theme_header,
+body.lookbook:not(.lookbook-open) #themeHeader,
+body.lookbook:not(.lookbook-open) .theme_header {
+  z-index: 4000;
+}
+
+.gallery_content {
+  position: relative;
+}
+
+/* Leftover full-area mark from older HTML — do not paint a second overlay. */
+.gallery_content > .gallery-load-mark {
+  display: none !important;
+}
+
+.gallery .asset.image,
+#lookbook-overlay .asset.image {
+  position: relative;
+  background: #f6f1f1 !important;
+}
+
+.gallery .asset.image .img,
+.gallery .asset.image .wrap,
+#lookbook-overlay .asset.image .img,
+#lookbook-overlay .asset.image .wrap {
+  position: relative;
+  height: 100%;
+}
+
+.gallery .asset.asset-await .wrap,
+.gallery .asset.asset-await .img,
+#lookbook-overlay .asset.asset-await .wrap,
+#lookbook-overlay .asset.asset-await .img {
+  width: 100%;
+}
+
+.lookbook-tile {
+  position: relative;
+  background: #f6f1f1;
+  min-height: 8rem;
+}
+
+.ba-pair .comparison_slider__image_wrap {
+  position: relative;
+  background: #f6f1f1;
+}
+
+.ba-pair.ba-await .comparison_slider__image_wrap {
+  min-height: 42vh;
+}
+
+.gallery-load-mark {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f1f1;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.asset.asset-ready .gallery-load-mark,
+.ba-pair.ba-ready .gallery-load-mark,
+.lookbook-tile.is-ready .gallery-load-mark {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gallery-load-line {
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: #2f2f2f;
+  opacity: 0.28;
+  transform-origin: center;
+  animation: gallery-load-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gallery-load-pulse {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scaleX(0.45);
+  }
+  50% {
+    opacity: 0.42;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-load-line {
+    animation: none;
+    opacity: 0.28;
+    transform: none;
+  }
+  .gallery-load-mark,
+  .gallery_content .asset img,
+  .lookbook-tile img,
+  .ba-pair .comparison_slider__slider_image {
+    transition: none;
+  }
+}
+
+/* Hide the bitmap until decode so progressive JPEG does not paint in chunks. */
+body.gallery:not(.lookbook) .gallery_content .asset:not(.asset-ready) img {
+  opacity: 0;
+}
+
+body.gallery:not(.lookbook) .gallery_content .asset.asset-ready img {
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+body.lookbook-open #lookbook-overlay .asset:not(.asset-ready) img {
+  opacity: 0 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.lookbook-tile img {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.lookbook-tile img.is-ready,
+.lookbook-tile.is-ready img {
+  opacity: 1;
+}
+
+.ba-pair.ba-await .comparison_slider__slider_image {
+  opacity: 0;
+}
+
+.ba-pair.ba-ready .comparison_slider__slider_image {
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
