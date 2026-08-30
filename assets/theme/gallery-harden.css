@@ -131,11 +131,25 @@ body.gallery:not(.lookbook-open) .theme_header {
     width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important;
-    /* Fixed mobile header overlays content; keep frames below it. */
-    padding-top: var(--gallery-header-h, 96px);
     height: 100% !important;
     max-height: 100% !important;
     box-sizing: border-box;
+  }
+
+  /* Pad ONLY #content — .gallery_content is nested inside it. Applying the
+     same --gallery-header-h to both doubled the white band under the logo
+     (~2× header height). Match Rates: photo sits just under the header bar. */
+  body.gallery #content {
+    padding-top: var(--gallery-header-h, 76px);
+  }
+  body.gallery .gallery_content {
+    padding-top: 0 !important;
+  }
+
+  /* Prefer top of frame (Rates-like), not vertically centered letterbox. */
+  .gallery .asset,
+  .gallery .asset img {
+    vertical-align: top;
   }
 
   .gallery #assets,

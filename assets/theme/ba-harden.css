@@ -209,3 +209,15 @@ body.content_page .page {
     height: 36px;
   }
 }
+
+/* Mobile: theme.js already offsets main.container by measured header height.
+   Drop Format's 36px row padding so the first BA pair sits just under the bar
+   (same visual gap as Rates banners). */
+@media only screen and (max-width: 767px),
+  only screen and (max-width: 850px) and (orientation: landscape) {
+  body.content_page #content_page_wrapper ._4ORMAT_content_page_row,
+  body.simple_page #content_page_wrapper ._4ORMAT_content_page_row {
+    padding-top: 4px !important;
+    padding-bottom: 0;
+  }
+}

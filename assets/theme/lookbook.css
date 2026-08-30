@@ -6,7 +6,8 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 12px 10px 48px;
+  /* Header is in-flow (relative); keep a Rates-like hairline under the bar. */
+  padding: 4px 10px 48px;
 }
 
 .lookbook-grid {

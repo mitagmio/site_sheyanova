@@ -3487,13 +3487,13 @@ html body #using,
   }
 }
 
-/* Mobile header: equal vertical padding around two-line logo (theme zeros
-   desktop 33px header padding; absolute vertical-center left logo flush-top). */
+/* Mobile header: light top padding (logo not flush), tight bottom so content
+   sits just under the bar (Rates reference ~8–12px top). */
 @media only screen and (max-width: 767px),
   only screen and (max-width: 850px) and (orientation: landscape) {
   #themeHeader .padding-div {
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-bottom: 8px;
     padding-left: 7%;
     padding-right: 7%;
     box-sizing: border-box;
