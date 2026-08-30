@@ -3508,8 +3508,9 @@ html body #using,
   }
 
   #themeHeader .padding-div {
-    padding-top: 10px;
-    padding-bottom: 8px;
+    /* Equal inset: screen→DARYIA and SHEYANOVA→photo (burger stays absolute). */
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 7%;
     padding-right: 7%;
     box-sizing: border-box;
@@ -3517,15 +3518,17 @@ html body #using,
   }
   #themeHeader .padding-div > .theme_logo {
     display: inline-block;
-    min-height: 0;
-    max-height: none;
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto;
     overflow: visible;
     max-width: calc(100% - 48px);
+    line-height: 0; /* kill theme strut; lines live on h1/a */
+    vertical-align: top;
   }
   .page #themeHeader .theme_logo h1,
   .page #themeHeader .theme_logo .logo,
-  #themeHeader .padding-div .theme_logo h1.logo,
-  #themeHeader .padding-div .theme_logo h1.logo a {
+  #themeHeader .padding-div .theme_logo h1.logo {
     position: relative;
     top: auto;
     left: auto;
@@ -3534,13 +3537,26 @@ html body #using,
     -ms-transform: none;
     -o-transform: none;
     transform: none;
+    display: block;
     max-width: 100%;
     width: auto;
-    max-height: none;
+    height: auto;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0;
+    padding: 0;
     overflow: visible;
     white-space: normal;
     font-size: 22px !important;
-    line-height: 1.15 !important;
+    line-height: 1.1 !important;
+  }
+  #themeHeader .padding-div .theme_logo h1.logo a {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+    vertical-align: top;
   }
 }
 
