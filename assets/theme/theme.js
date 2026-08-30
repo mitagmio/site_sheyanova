@@ -86,6 +86,10 @@ window.Theme.Menu = window.Theme.Menu || {
     });
   },
   toggle: function() {
+    // Prefer mobile-nav.js (binds first with stopImmediatePropagation).
+    if (Theme.$.menuToggle.is("[data-mobile-nav-bound]") || document.querySelector("script[src*='mobile-nav.js']")) {
+      return;
+    }
     Theme.$.menuToggle.on("click", function() {
       var $btn = $(this);
       // Gallery theme (#themeHeader): data-toggle-nav + data-mobile-nav.show
@@ -358,7 +362,9 @@ window.Theme.Listing = window.Theme.Listing || {
   }
 };
 
-window.lazySizes.init();
+if (window.lazySizes && typeof window.lazySizes.init === "function") {
+  window.lazySizes.init();
+}
 
 // Debounce function
 
