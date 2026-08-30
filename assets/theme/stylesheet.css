@@ -3487,20 +3487,36 @@ html body #using,
   }
 }
 
-/* Mobile header: light top padding (logo not flush), tight bottom so content
-   sits just under the bar (Rates reference ~8–12px top). Full two-line name
-   must fit beside the burger — theme h1{32px!important} + max-width:75% +
-   overflow:hidden was clipping "SHEYANOVA" to "SHEYANC…". */
-@media only screen and (max-width: 767px),
-  only screen and (max-width: 850px) and (orientation: landscape) {
+/* Phone + tablet (≤1100): burger chrome. Mid-widths were showing the desktop
+   table header (logo alone, wrapping nav, social far right) — Contact/Rates/About.
+   Gallery strip scroll + fixed header live in gallery-harden.css. */
+@media only screen and (max-width: 1100px) {
+  /* Undo theme .hide-for-large { display:none } from ≥768px */
+  .button-mobile-toggler.hide-for-large,
+  button.hide-for-large[data-toggle-nav] {
+    display: block !important;
+  }
+  nav.theme_mobile_nav.hide-for-large {
+    /* drawer itself; visibility toggled via .show — must not stay display:none */
+    display: block !important;
+  }
+  ul.hide-for-small.theme_menu,
+  ul.hide-for-small.theme_social,
+  #menu.hide-for-small,
+  #social.hide-for-small {
+    display: none !important;
+  }
+
   #themeHeader .padding-div {
     padding-top: 10px;
     padding-bottom: 8px;
     padding-left: 7%;
     padding-right: 7%;
     box-sizing: border-box;
+    position: relative;
   }
   #themeHeader .padding-div > .theme_logo {
+    display: inline-block;
     min-height: 0;
     max-height: none;
     overflow: visible;
@@ -3527,3 +3543,4 @@ html body #using,
     line-height: 1.15 !important;
   }
 }
+
