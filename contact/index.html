@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://sheyanova.art/contact"/>
 <link href="/static/theme_api/v1/hosted_fonts-58e499298cb6db37c90c2bd6bd2ad287c8423ad12d9c2cc346a2af9afc8b7fd4.css" media="screen" rel="stylesheet"/>
 <link href="/static/theme_api/vendor/webtype_fonts.min-a27384810945198dd373502796bfbada62cc8409c49831a8778ac894e78f7749.css" media="screen" rel="stylesheet"/>
-<link href="/assets/theme/stylesheet.css?v=14" media="screen" rel="stylesheet"/>
+<link href="/assets/theme/stylesheet.css?v=15" media="screen" rel="stylesheet"/>
 <link href="/assets/theme/about.css?v=2" media="screen" rel="stylesheet"/>
 <link href="/static/theme_api/v1/960_simple-80ab8eb2695abe415bd536608db207267db1a467f2841da1c01b06c3559dd9c6.css" media="screen" rel="stylesheet"/>
 <link href="/static/_common/animation-7fc12d665fca943072e7f3c6c84d756b935958c9d92f8a940de7dcfd69c2b253.css" media="screen" rel="stylesheet"/>
@@ -18,7 +18,7 @@
 <link href="/static/_common/contact_form-7d6c73bf9f5dd914006a80bda1ccb9ab37ae9120a36bfc43e414e37243392434.css" media="screen" rel="stylesheet"/>
 <link href="/static/_common/modal_message-2f43ae475b7f02fe3d971433e91ec03913a13df4965f24667ce84e667b461cbb.css" media="screen" rel="stylesheet"/>
 </head>
-<body class="content content_page simple simple_page">
+<body class="content content_page simple simple_page contact-page">
 <div class="page clearfix">
 <div class="theme_header static clearfix" id="themeHeader">
 <div class="padding-div">
@@ -151,15 +151,17 @@
 <div class="twocol spacer"></div>
 <div class="eightcol">
 <style>
-.contact_form__status{margin:0 0 14px;min-height:1.2em;font-size:0.95em}
+.contact_form__status{margin:0 0 8px;min-height:0;font-size:0.95em}
 .contact_form__status.is-ok{color:#2a7a3a}
 .contact_form__status.is-err{color:#c00}
 .contact_form.is-busy input[type=submit]{opacity:.6;pointer-events:none}
 .contact_form{position:relative}
 .contact_form_hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-@media only screen and (max-width:767px){
-.contact_form .row.naked>.sixcol{width:100%!important;float:none!important;margin:0 0 10px!important;display:block;clear:both}
+@media only screen and (max-width:1100px){
+.contact_form .row.naked>.sixcol{width:100%!important;float:none!important;margin:0 0 8px!important;display:block;clear:both}
 .contact_form .row.naked>.sixcol input{border-right-width:1px}
+.contact_form textarea._4ORMAT_module_contact_input{min-height:5.5rem;max-height:22vh}
+.contact_form form,.contact_form{margin-top:0!important;padding-top:0!important}
 }
 </style>
 <form id="contact_form_b54d97c37cff41fe" class="email_form contact_form" method="post" action="https://api.sheyanova.art/api/contact" novalidate>
