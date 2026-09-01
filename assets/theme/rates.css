@@ -397,7 +397,7 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
 .rates-dialog .rate-modal__panel {
   position: relative;
   z-index: 1;
-  width: min(880px, 100%);
+  width: min(80vw, 100%);
   background: #ffffff;
   color: #706c87;
   font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
@@ -596,9 +596,9 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   flex-direction: column;
   align-items: stretch;
   height: 100%;
-  gap: 8px;
+  gap: 6px;
   margin: 0;
-  padding: 8px;
+  padding: 4px;
   border: 1px solid rgba(127, 127, 127, 0.5);
   border-radius: 10px;
   background: #ffffff;
@@ -635,8 +635,8 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   margin-inline: auto;
   aspect-ratio: 2 / 3;
   overflow: hidden;
-  border-radius: 6px;
-  background: transparent;
+  border-radius: 4px;
+  background: none;
   flex: 0 0 auto;
   flex-shrink: 0;
 }
@@ -651,11 +651,11 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   height: 100% !important;
   max-width: none;
   max-height: none;
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center center;
   display: block;
-  border-radius: 6px;
-  background: transparent;
+  border-radius: 4px;
+  background: none;
 }
 
 .rate-retouch__plaque {
