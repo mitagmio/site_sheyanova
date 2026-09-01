@@ -578,6 +578,12 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   align-items: stretch;
 }
 
+@media (min-width: 768px) {
+  .rate-retouch-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .rate-retouch-grid > .rate-retouch {
   height: 100%;
   min-height: 100%;
