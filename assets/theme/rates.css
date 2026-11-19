@@ -529,6 +529,45 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   font-weight: normal;
 }
 
+.rate-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+.rate-form-row > .rate-field {
+  margin-bottom: 0;
+}
+
+.rate-reqs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 28px;
+  align-items: start;
+  margin: 0 0 12px;
+}
+
+@media (min-width: 900px) {
+  .rate-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rate-reqs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Fashion/Lookbook/Editorial: left = color + clothing; right = background + model + footwear */
+  .rate-reqs > .rate-fieldset:nth-child(1),
+  .rate-reqs > .rate-fieldset:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .rate-reqs > .rate-fieldset:nth-child(n + 3) {
+    grid-column: 2;
+  }
+}
+
 .rate-fieldset {
   border: 0;
   padding: 0;
@@ -665,19 +704,18 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   z-index: 1;
   box-sizing: border-box;
   max-width: calc(100% - 16px);
-  padding: 7px 12px;
+  padding: 7px 10px;
   background: #2f2f2f;
   color: #ffffff;
   font-family: "News Gothic Regular", "News Gothic Regular", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
   font-style: normal;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   line-height: 1.2;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
-  text-overflow: ellipsis;
   pointer-events: none;
 }
 

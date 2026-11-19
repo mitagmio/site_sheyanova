@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="/static/_common/animation-7fc12d665fca943072e7f3c6c84d756b935958c9d92f8a940de7dcfd69c2b253.css" media="screen" rel="stylesheet"/>
 <link href="/static/_common/module_base-52f9ad05f403265ad4033430f00ab7b3dca79686e1b73cf6456eb55acf10a750.css" media="screen" rel="stylesheet"/>
 <link href="/static/_common/contact_form-7d6c73bf9f5dd914006a80bda1ccb9ab37ae9120a36bfc43e414e37243392434.css" media="screen" rel="stylesheet"/>
-<link href="/assets/theme/rates.css?v=25" media="screen" rel="stylesheet"/>
+<link href="/assets/theme/rates.css?v=26" media="screen" rel="stylesheet"/>
 </head>
 <body class="rates rates-page content content_page simple simple_page">
 <!-- Google Tag Manager (noscript) -->
@@ -222,6 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Image Submission
 <input class="_4ORMAT_module_contact_input" name="Imagelink" type="text" required maxlength="2000" placeholder="Paste the link here" autocomplete="off"/>
 <span class="rate-hint">Share a link to your images (Google Drive, Dropbox, or another file-sharing service).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Total Number of Images
 <input class="_4ORMAT_module_contact_input" name="Total" type="number" required min="1" step="1" inputmode="numeric" placeholder="e.g. 30"/>
 </label>
@@ -234,25 +235,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </span>
 <span class="rate-hint" id="rate-date-hint-fashion">Type YYYY-MM-DD or use the English calendar. Past dates are not allowed.</span>
 </label>
+</div>
 <fieldset class="rate-fieldset rate-retouch-level">
 <legend>Retouching Style</legend>
 <p class="rate-hint">Choose the level of retouching that best matches your expectations.</p>
 <div class="rate-retouch-grid">
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="1" required/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT / RAW"/><span class="rate-retouch__plaque">LIGHT / RAW</span></span>
-<span class="rate-retouch__text">1. Light skin retouching that doesn&#39;t affect the shadow and age changes to leave your photo as natural as possible</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT RETOUCHING"/><span class="rate-retouch__plaque">LIGHT RETOUCHING</span></span>
+<span class="rate-retouch__text">1. LIGHT RETOUCHING — Subtle skin refinements while preserving the original texture, natural shadows, and individual features.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="2"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL"/><span class="rate-retouch__plaque">NATURAL</span></span>
-<span class="rate-retouch__text">2. Removing obvious blemishes, but keeping the model looking natural with all the personal characteristics</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL RETOUCHING"/><span class="rate-retouch__plaque">NATURAL RETOUCHING</span></span>
+<span class="rate-retouch__text">2. NATURAL RETOUCHING — Removal of visible imperfections while maintaining the model&#39;s natural appearance, skin texture, and unique characteristics.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="3"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="CLEAN UP"/><span class="rate-retouch__plaque">CLEAN UP</span></span>
-<span class="rate-retouch__text">3. Focus is on the skin retouching: removing all imperfections, smoothing wrinkles, yet saving natural texture</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="DETAILED RETOUCHING"/><span class="rate-retouch__plaque">DETAILED RETOUCHING</span></span>
+<span class="rate-retouch__text">3. DETAILED RETOUCHING — More extensive skin refinement, including blemish removal, texture smoothing, and wrinkle reduction while retaining realistic skin detail.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="4"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="FULL TOUCH UP"/><span class="rate-retouch__plaque">FULL TOUCH UP</span></span>
-<span class="rate-retouch__text">4. Retouching of blemishes, scars, improving texture, removing of unwanted wrinkles, adjusting highlights and features</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="ADVANCED RETOUCHING"/><span class="rate-retouch__plaque">ADVANCED RETOUCHING</span></span>
+<span class="rate-retouch__text">4. ADVANCED RETOUCHING — Comprehensive image refinement, including skin corrections, scar removal, texture enhancement, wrinkle cleanup, and precise highlight and shadow adjustments.</span>
 </label>
 </div>
 </fieldset>
@@ -261,6 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Color Reference
 <input class="_4ORMAT_module_contact_input" name="Color_Reference" type="text" maxlength="2000" placeholder="Paste the link here" autocomplete="off" data-rate-color-ref/>
 <span class="rate-hint">Provide a link to your preferred color reference (optional).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Image Format
 <select class="_4ORMAT_module_contact_input" name="Format" required>
 <option value="" disabled selected>Select format</option><option value="JPG">JPG</option><option value="TIFF">TIFF</option><option value="PSD">PSD</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
@@ -271,39 +274,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <option value="" disabled selected>Select color profile</option><option value="Adobe RGB (1998)">Adobe RGB (1998)</option><option value="sRGB Profile">sRGB Profile</option><option value="ProPhoto RGB">ProPhoto RGB</option><option value="e-sRGB">e-sRGB</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
 </select>
 </label>
+</div>
 <p class="rate-hint">Please specify the technical requirements for your final image delivery.</p>
 <h3 class="rate-step">STEP 3</h3>
 <h2 class="rate-form-heading">Retouching Requirements</h2>
-<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="Basic RAW Development (Camera RAW or Capture One)"/> Basic RAW Development (Camera RAW or Capture One)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)"/> Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Balancing (for example, reduce redness in hands/fingers)"/> Skin Tone Balancing (for example, reduce redness in hands/fingers)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)"/> Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Brightening Eye Whites and Teeth"/> Brightening Eye Whites and Teeth</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Correction by Reference"/> Color Correction by Reference</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="No-Reference Color Image Grading (options to our taste)"/> No-Reference Color Image Grading (options to our taste)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustment"/> Selective Color Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Changing the color on individual elements"/> Changing the color on individual elements</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Working with Light Accents: Highlighting the Main Object by Brightness Adjusting"/> Working with Light Accents: Highlighting the Main Object by Brightness Adjusting</label>
+<div class="rate-reqs">
+<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="RAW Processing (Camera Raw / Capture One)"/> RAW Processing (Camera Raw / Capture One)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Cast Removal (neutralizing unwanted color shifts)"/> Color Cast Removal (neutralizing unwanted color shifts)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Refinement (balancing uneven skin tones and redness)"/> Skin Tone Refinement (balancing uneven skin tones and redness)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Body Exposure Correction (balancing light across the body)"/> Body Exposure Correction (balancing light across the body)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Eye &amp; Teeth Brightening"/> Eye &amp; Teeth Brightening</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Matching to Reference"/> Color Matching to Reference</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Creative Color Grading (without a reference)"/> Creative Color Grading (without a reference)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustments"/> Selective Color Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Individual Object Color Changes"/> Individual Object Color Changes</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Light &amp; Shadow Adjustments (enhancing the main subject)"/> Light &amp; Shadow Adjustments (enhancing the main subject)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain, and Scratch Removal"/> Dust, Stain, and Scratch Removal</label>
-<label class="rate-check"><input type="checkbox" name="background" value="Clipping mask"/> Clipping mask</label>
+<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="Garment Cleanup (removing lint, dust and loose threads)"/> Garment Cleanup (removing lint, dust and loose threads)</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle &amp; Crease Reduction"/> Wrinkle &amp; Crease Reduction</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Garment Shape Refinement"/> Garment Shape Refinement</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Fit Adjustments"/> Clothing Fit Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Replacement Using Additional Images or Plates"/> Clothing Replacement Using Additional Images or Plates</label>
+</fieldset>
+<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain &amp; Scratch Removal"/> Dust, Stain &amp; Scratch Removal</label>
+<label class="rate-check"><input type="checkbox" name="background" value="Clipping Path / Precise Object Masking"/> Clipping Path / Precise Object Masking</label>
 <label class="rate-check"><input type="checkbox" name="background" value="Background Replacement"/> Background Replacement</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)"/> Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Makeup Correction"/> Makeup Correction</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Manicure Adjustment"/> Manicure Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)"/> Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)</label>
+<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)"/> Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Makeup Refinement"/> Makeup Refinement</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Nail &amp; Manicure Corrections"/> Nail &amp; Manicure Corrections</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching (flyaway removal and hair volume enhancement)"/> Hair Retouching (flyaway removal and hair volume enhancement)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="General Cleaning (Pilling, Dust, Threads)"/> General Cleaning (Pilling, Dust, Threads)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle/Crease Smoothing"/> Wrinkle/Crease Smoothing</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Shape Correction"/> Shape Correction</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Fix Clothing, Move Clothing (closer to the body)"/> Fix Clothing, Move Clothing (closer to the body)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Part Replacement from Additional Shots/Plates"/> Clothing Part Replacement from Additional Shots/Plates</label>
+<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Cleanup (removing dust, marks and scratches)"/> Shoe Cleanup (removing dust, marks and scratches)</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Sole Tape Removal"/> Sole Tape Removal</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Match the Model&#39;s Foot Proportions"/> Shoe Resizing to Match the Model&#39;s Foot Proportions</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="General Cleaning (Dust, Scratches)"/> General Cleaning (Dust, Scratches)</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Tape Removal from Shoe Sole"/> Tape Removal from Shoe Sole</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Models Foot Size"/> Shoe Resizing to Models Foot Size</label>
-</fieldset>
+</div>
 <h3 class="rate-step">STEP 4</h3>
 <label class="rate-field">Brief
 <textarea class="_4ORMAT_module_contact_input" name="Brief" rows="5" maxlength="8000" placeholder="Tell us about the project"></textarea>
@@ -351,6 +357,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Image Submission
 <input class="_4ORMAT_module_contact_input" name="Imagelink" type="text" required maxlength="2000" placeholder="Paste the link here" autocomplete="off"/>
 <span class="rate-hint">Share a link to your images (Google Drive, Dropbox, or another file-sharing service).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Total Number of Images
 <input class="_4ORMAT_module_contact_input" name="Total" type="number" required min="1" step="1" inputmode="numeric" placeholder="e.g. 30"/>
 </label>
@@ -363,25 +370,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </span>
 <span class="rate-hint" id="rate-date-hint-beauty">Type YYYY-MM-DD or use the English calendar. Past dates are not allowed.</span>
 </label>
+</div>
 <fieldset class="rate-fieldset rate-retouch-level">
 <legend>Retouching Style</legend>
 <p class="rate-hint">Choose the level of retouching that best matches your expectations.</p>
 <div class="rate-retouch-grid">
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="1" required/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT / RAW"/><span class="rate-retouch__plaque">LIGHT / RAW</span></span>
-<span class="rate-retouch__text">1. Light skin retouching that doesn&#39;t affect the shadow and age changes to leave your photo as natural as possible</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT RETOUCHING"/><span class="rate-retouch__plaque">LIGHT RETOUCHING</span></span>
+<span class="rate-retouch__text">1. LIGHT RETOUCHING — Subtle skin refinements while preserving the original texture, natural shadows, and individual features.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="2"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL"/><span class="rate-retouch__plaque">NATURAL</span></span>
-<span class="rate-retouch__text">2. Removing obvious blemishes, but keeping the model looking natural with all the personal characteristics</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL RETOUCHING"/><span class="rate-retouch__plaque">NATURAL RETOUCHING</span></span>
+<span class="rate-retouch__text">2. NATURAL RETOUCHING — Removal of visible imperfections while maintaining the model&#39;s natural appearance, skin texture, and unique characteristics.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="3"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="CLEAN UP"/><span class="rate-retouch__plaque">CLEAN UP</span></span>
-<span class="rate-retouch__text">3. Focus is on the skin retouching: removing all imperfections, smoothing wrinkles, yet saving natural texture</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="DETAILED RETOUCHING"/><span class="rate-retouch__plaque">DETAILED RETOUCHING</span></span>
+<span class="rate-retouch__text">3. DETAILED RETOUCHING — More extensive skin refinement, including blemish removal, texture smoothing, and wrinkle reduction while retaining realistic skin detail.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="4"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="FULL TOUCH UP"/><span class="rate-retouch__plaque">FULL TOUCH UP</span></span>
-<span class="rate-retouch__text">4. Retouching of blemishes, scars, improving texture, removing of unwanted wrinkles, adjusting highlights and features</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="ADVANCED RETOUCHING"/><span class="rate-retouch__plaque">ADVANCED RETOUCHING</span></span>
+<span class="rate-retouch__text">4. ADVANCED RETOUCHING — Comprehensive image refinement, including skin corrections, scar removal, texture enhancement, wrinkle cleanup, and precise highlight and shadow adjustments.</span>
 </label>
 </div>
 </fieldset>
@@ -390,6 +398,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Color Reference
 <input class="_4ORMAT_module_contact_input" name="Color_Reference" type="text" maxlength="2000" placeholder="Paste the link here" autocomplete="off" data-rate-color-ref/>
 <span class="rate-hint">Provide a link to your preferred color reference (optional).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Image Format
 <select class="_4ORMAT_module_contact_input" name="Format" required>
 <option value="" disabled selected>Select format</option><option value="JPG">JPG</option><option value="TIFF">TIFF</option><option value="PSD">PSD</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
@@ -400,32 +409,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <option value="" disabled selected>Select color profile</option><option value="Adobe RGB (1998)">Adobe RGB (1998)</option><option value="sRGB Profile">sRGB Profile</option><option value="ProPhoto RGB">ProPhoto RGB</option><option value="e-sRGB">e-sRGB</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
 </select>
 </label>
+</div>
 <p class="rate-hint">Please specify the technical requirements for your final image delivery.</p>
 <h3 class="rate-step">STEP 3</h3>
 <h2 class="rate-form-heading">Retouching Requirements</h2>
-<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="Basic RAW Development (Camera RAW or Capture One)"/> Basic RAW Development (Camera RAW or Capture One)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)"/> Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Balancing (for example, reduce redness in hands/fingers)"/> Skin Tone Balancing (for example, reduce redness in hands/fingers)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)"/> Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Brightening Eye Whites and Teeth"/> Brightening Eye Whites and Teeth</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Correction by Reference"/> Color Correction by Reference</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="No-Reference Color Image Grading (options to our taste)"/> No-Reference Color Image Grading (options to our taste)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Changing the color on individual elements (for example, makeup/nail/lipstick colors)"/> Changing the color on individual elements (for example, makeup/nail/lipstick colors)</label>
+<div class="rate-reqs">
+<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="RAW Processing (Camera Raw / Capture One)"/> RAW Processing (Camera Raw / Capture One)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Cast Removal (neutralizing unwanted color shifts)"/> Color Cast Removal (neutralizing unwanted color shifts)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Refinement (balancing uneven skin tones and redness)"/> Skin Tone Refinement (balancing uneven skin tones and redness)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Body Exposure Correction (balancing light across the body)"/> Body Exposure Correction (balancing light across the body)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Eye &amp; Teeth Brightening"/> Eye &amp; Teeth Brightening</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Matching to Reference"/> Color Matching to Reference</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Creative Color Grading (without a reference)"/> Creative Color Grading (without a reference)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Individual Object Color Changes (for example, makeup/nail/lipstick colors)"/> Individual Object Color Changes (for example, makeup/nail/lipstick colors)</label>
 <label class="rate-check"><input type="checkbox" name="colorwork" value="Contrast Enhancement"/> Contrast Enhancement</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Working with Light Accents: Highlighting the Main Object by Brightness Adjusting"/> Working with Light Accents: Highlighting the Main Object by Brightness Adjusting</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Light &amp; Shadow Adjustments (enhancing the main subject)"/> Light &amp; Shadow Adjustments (enhancing the main subject)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain, and Scratch Removal"/> Dust, Stain, and Scratch Removal</label>
-<label class="rate-check"><input type="checkbox" name="background" value="Clipping mask"/> Clipping mask</label>
+<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain &amp; Scratch Removal"/> Dust, Stain &amp; Scratch Removal</label>
+<label class="rate-check"><input type="checkbox" name="background" value="Clipping Path / Precise Object Masking"/> Clipping Path / Precise Object Masking</label>
 <label class="rate-check"><input type="checkbox" name="background" value="Background Replacement"/> Background Replacement</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)"/> Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Makeup Correction"/> Makeup Correction</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Manicure Adjustment"/> Manicure Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)"/> Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)</label>
+<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)"/> Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Makeup Refinement"/> Makeup Refinement</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Nail &amp; Manicure Corrections"/> Nail &amp; Manicure Corrections</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching (flyaway removal and hair volume enhancement)"/> Hair Retouching (flyaway removal and hair volume enhancement)</label>
 <label class="rate-check"><input type="checkbox" name="model" value="Detailed Lip Retouching"/> Detailed Lip Retouching</label>
 <label class="rate-check"><input type="checkbox" name="model" value="Cosmetic Product Retouching in Frame (Lipstick, Powder, Perfume, etc.)"/> Cosmetic Product Retouching in Frame (Lipstick, Powder, Perfume, etc.)</label>
 <label class="rate-check"><input type="checkbox" name="model" value="Clothing Retouching (Wrinkle Softening, Shape Correction)"/> Clothing Retouching (Wrinkle Softening, Shape Correction)</label>
 </fieldset>
+</div>
 <h3 class="rate-step">STEP 4</h3>
 <label class="rate-field">Brief
 <textarea class="_4ORMAT_module_contact_input" name="Brief" rows="5" maxlength="8000" placeholder="Tell us about the project"></textarea>
@@ -473,6 +485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Image Submission
 <input class="_4ORMAT_module_contact_input" name="Imagelink" type="text" required maxlength="2000" placeholder="Paste the link here" autocomplete="off"/>
 <span class="rate-hint">Share a link to your images (Google Drive, Dropbox, or another file-sharing service).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Total Number of Images
 <input class="_4ORMAT_module_contact_input" name="Total" type="number" required min="1" step="1" inputmode="numeric" placeholder="e.g. 30"/>
 </label>
@@ -485,25 +498,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </span>
 <span class="rate-hint" id="rate-date-hint-lookbook">Type YYYY-MM-DD or use the English calendar. Past dates are not allowed.</span>
 </label>
+</div>
 <fieldset class="rate-fieldset rate-retouch-level">
 <legend>Retouching Style</legend>
 <p class="rate-hint">Choose the level of retouching that best matches your expectations.</p>
 <div class="rate-retouch-grid">
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="1" required/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT / RAW"/><span class="rate-retouch__plaque">LIGHT / RAW</span></span>
-<span class="rate-retouch__text">1. Light skin retouching that doesn&#39;t affect the shadow and age changes to leave your photo as natural as possible</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT RETOUCHING"/><span class="rate-retouch__plaque">LIGHT RETOUCHING</span></span>
+<span class="rate-retouch__text">1. LIGHT RETOUCHING — Subtle skin refinements while preserving the original texture, natural shadows, and individual features.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="2"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL"/><span class="rate-retouch__plaque">NATURAL</span></span>
-<span class="rate-retouch__text">2. Removing obvious blemishes, but keeping the model looking natural with all the personal characteristics</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL RETOUCHING"/><span class="rate-retouch__plaque">NATURAL RETOUCHING</span></span>
+<span class="rate-retouch__text">2. NATURAL RETOUCHING — Removal of visible imperfections while maintaining the model&#39;s natural appearance, skin texture, and unique characteristics.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="3"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="CLEAN UP"/><span class="rate-retouch__plaque">CLEAN UP</span></span>
-<span class="rate-retouch__text">3. Focus is on the skin retouching: removing all imperfections, smoothing wrinkles, yet saving natural texture</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="DETAILED RETOUCHING"/><span class="rate-retouch__plaque">DETAILED RETOUCHING</span></span>
+<span class="rate-retouch__text">3. DETAILED RETOUCHING — More extensive skin refinement, including blemish removal, texture smoothing, and wrinkle reduction while retaining realistic skin detail.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="4"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="FULL TOUCH UP"/><span class="rate-retouch__plaque">FULL TOUCH UP</span></span>
-<span class="rate-retouch__text">4. Retouching of blemishes, scars, improving texture, removing of unwanted wrinkles, adjusting highlights and features</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="ADVANCED RETOUCHING"/><span class="rate-retouch__plaque">ADVANCED RETOUCHING</span></span>
+<span class="rate-retouch__text">4. ADVANCED RETOUCHING — Comprehensive image refinement, including skin corrections, scar removal, texture enhancement, wrinkle cleanup, and precise highlight and shadow adjustments.</span>
 </label>
 </div>
 </fieldset>
@@ -512,6 +526,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Color Reference
 <input class="_4ORMAT_module_contact_input" name="Color_Reference" type="text" maxlength="2000" placeholder="Paste the link here" autocomplete="off" data-rate-color-ref/>
 <span class="rate-hint">Provide a link to your preferred color reference (optional).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Image Format
 <select class="_4ORMAT_module_contact_input" name="Format" required>
 <option value="" disabled selected>Select format</option><option value="JPG">JPG</option><option value="TIFF">TIFF</option><option value="PSD">PSD</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
@@ -522,39 +537,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <option value="" disabled selected>Select color profile</option><option value="Adobe RGB (1998)">Adobe RGB (1998)</option><option value="sRGB Profile">sRGB Profile</option><option value="ProPhoto RGB">ProPhoto RGB</option><option value="e-sRGB">e-sRGB</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
 </select>
 </label>
+</div>
 <p class="rate-hint">Please specify the technical requirements for your final image delivery.</p>
 <h3 class="rate-step">STEP 3</h3>
 <h2 class="rate-form-heading">Retouching Requirements</h2>
-<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="Basic RAW Development (Camera RAW or Capture One)"/> Basic RAW Development (Camera RAW or Capture One)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)"/> Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Balancing (for example, reduce redness in hands/fingers)"/> Skin Tone Balancing (for example, reduce redness in hands/fingers)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)"/> Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Brightening Eye Whites and Teeth"/> Brightening Eye Whites and Teeth</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Correction by Reference"/> Color Correction by Reference</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="No-Reference Color Image Grading (options to our taste)"/> No-Reference Color Image Grading (options to our taste)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustment"/> Selective Color Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Changing the color on individual elements"/> Changing the color on individual elements</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Working with Light Accents: Highlighting the Main Object by Brightness Adjusting"/> Working with Light Accents: Highlighting the Main Object by Brightness Adjusting</label>
+<div class="rate-reqs">
+<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="RAW Processing (Camera Raw / Capture One)"/> RAW Processing (Camera Raw / Capture One)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Cast Removal (neutralizing unwanted color shifts)"/> Color Cast Removal (neutralizing unwanted color shifts)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Refinement (balancing uneven skin tones and redness)"/> Skin Tone Refinement (balancing uneven skin tones and redness)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Body Exposure Correction (balancing light across the body)"/> Body Exposure Correction (balancing light across the body)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Eye &amp; Teeth Brightening"/> Eye &amp; Teeth Brightening</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Matching to Reference"/> Color Matching to Reference</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Creative Color Grading (without a reference)"/> Creative Color Grading (without a reference)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustments"/> Selective Color Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Individual Object Color Changes"/> Individual Object Color Changes</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Light &amp; Shadow Adjustments (enhancing the main subject)"/> Light &amp; Shadow Adjustments (enhancing the main subject)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain, and Scratch Removal"/> Dust, Stain, and Scratch Removal</label>
-<label class="rate-check"><input type="checkbox" name="background" value="Clipping mask"/> Clipping mask</label>
+<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="Garment Cleanup (removing lint, dust and loose threads)"/> Garment Cleanup (removing lint, dust and loose threads)</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle &amp; Crease Reduction"/> Wrinkle &amp; Crease Reduction</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Garment Shape Refinement"/> Garment Shape Refinement</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Fit Adjustments"/> Clothing Fit Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Replacement Using Additional Images or Plates"/> Clothing Replacement Using Additional Images or Plates</label>
+</fieldset>
+<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain &amp; Scratch Removal"/> Dust, Stain &amp; Scratch Removal</label>
+<label class="rate-check"><input type="checkbox" name="background" value="Clipping Path / Precise Object Masking"/> Clipping Path / Precise Object Masking</label>
 <label class="rate-check"><input type="checkbox" name="background" value="Background Replacement"/> Background Replacement</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)"/> Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Makeup Correction"/> Makeup Correction</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Manicure Adjustment"/> Manicure Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)"/> Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)</label>
+<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)"/> Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Makeup Refinement"/> Makeup Refinement</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Nail &amp; Manicure Corrections"/> Nail &amp; Manicure Corrections</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching (flyaway removal and hair volume enhancement)"/> Hair Retouching (flyaway removal and hair volume enhancement)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="General Cleaning (Pilling, Dust, Threads)"/> General Cleaning (Pilling, Dust, Threads)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle/Crease Smoothing"/> Wrinkle/Crease Smoothing</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Shape Correction"/> Shape Correction</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Fix Clothing, Move Clothing (closer to the body)"/> Fix Clothing, Move Clothing (closer to the body)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Part Replacement from Additional Shots/Plates"/> Clothing Part Replacement from Additional Shots/Plates</label>
+<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Cleanup (removing dust, marks and scratches)"/> Shoe Cleanup (removing dust, marks and scratches)</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Sole Tape Removal"/> Sole Tape Removal</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Match the Model&#39;s Foot Proportions"/> Shoe Resizing to Match the Model&#39;s Foot Proportions</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="General Cleaning (Dust, Scratches)"/> General Cleaning (Dust, Scratches)</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Tape Removal from Shoe Sole"/> Tape Removal from Shoe Sole</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Models Foot Size"/> Shoe Resizing to Models Foot Size</label>
-</fieldset>
+</div>
 <h3 class="rate-step">STEP 4</h3>
 <label class="rate-field">Brief
 <textarea class="_4ORMAT_module_contact_input" name="Brief" rows="5" maxlength="8000" placeholder="Tell us about the project"></textarea>
@@ -602,6 +620,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Image Submission
 <input class="_4ORMAT_module_contact_input" name="Imagelink" type="text" required maxlength="2000" placeholder="Paste the link here" autocomplete="off"/>
 <span class="rate-hint">Share a link to your images (Google Drive, Dropbox, or another file-sharing service).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Total Number of Images
 <input class="_4ORMAT_module_contact_input" name="Total" type="number" required min="1" step="1" inputmode="numeric" placeholder="e.g. 30"/>
 </label>
@@ -614,25 +633,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </span>
 <span class="rate-hint" id="rate-date-hint-editorial">Type YYYY-MM-DD or use the English calendar. Past dates are not allowed.</span>
 </label>
+</div>
 <fieldset class="rate-fieldset rate-retouch-level">
 <legend>Retouching Style</legend>
 <p class="rate-hint">Choose the level of retouching that best matches your expectations.</p>
 <div class="rate-retouch-grid">
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="1" required/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT / RAW"/><span class="rate-retouch__plaque">LIGHT / RAW</span></span>
-<span class="rate-retouch__text">1. Light skin retouching that doesn&#39;t affect the shadow and age changes to leave your photo as natural as possible</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-1.webp?v=4" alt="LIGHT RETOUCHING"/><span class="rate-retouch__plaque">LIGHT RETOUCHING</span></span>
+<span class="rate-retouch__text">1. LIGHT RETOUCHING — Subtle skin refinements while preserving the original texture, natural shadows, and individual features.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="2"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL"/><span class="rate-retouch__plaque">NATURAL</span></span>
-<span class="rate-retouch__text">2. Removing obvious blemishes, but keeping the model looking natural with all the personal characteristics</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-2.webp?v=4" alt="NATURAL RETOUCHING"/><span class="rate-retouch__plaque">NATURAL RETOUCHING</span></span>
+<span class="rate-retouch__text">2. NATURAL RETOUCHING — Removal of visible imperfections while maintaining the model&#39;s natural appearance, skin texture, and unique characteristics.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="3"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="CLEAN UP"/><span class="rate-retouch__plaque">CLEAN UP</span></span>
-<span class="rate-retouch__text">3. Focus is on the skin retouching: removing all imperfections, smoothing wrinkles, yet saving natural texture</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-3.webp?v=4" alt="DETAILED RETOUCHING"/><span class="rate-retouch__plaque">DETAILED RETOUCHING</span></span>
+<span class="rate-retouch__text">3. DETAILED RETOUCHING — More extensive skin refinement, including blemish removal, texture smoothing, and wrinkle reduction while retaining realistic skin detail.</span>
 </label>
 <label class="rate-retouch"><input type="radio" name="Retouch_level" value="4"/>
-<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="FULL TOUCH UP"/><span class="rate-retouch__plaque">FULL TOUCH UP</span></span>
-<span class="rate-retouch__text">4. Retouching of blemishes, scars, improving texture, removing of unwanted wrinkles, adjusting highlights and features</span>
+<span class="rate-retouch__frame"><img src="/assets/theme/rates/retouch-level-4.webp?v=4" alt="ADVANCED RETOUCHING"/><span class="rate-retouch__plaque">ADVANCED RETOUCHING</span></span>
+<span class="rate-retouch__text">4. ADVANCED RETOUCHING — Comprehensive image refinement, including skin corrections, scar removal, texture enhancement, wrinkle cleanup, and precise highlight and shadow adjustments.</span>
 </label>
 </div>
 </fieldset>
@@ -641,6 +661,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label class="rate-field">Color Reference
 <input class="_4ORMAT_module_contact_input" name="Color_Reference" type="text" maxlength="2000" placeholder="Paste the link here" autocomplete="off" data-rate-color-ref/>
 <span class="rate-hint">Provide a link to your preferred color reference (optional).</span></label>
+<div class="rate-form-row">
 <label class="rate-field">Image Format
 <select class="_4ORMAT_module_contact_input" name="Format" required>
 <option value="" disabled selected>Select format</option><option value="JPG">JPG</option><option value="TIFF">TIFF</option><option value="PSD">PSD</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
@@ -651,39 +672,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <option value="" disabled selected>Select color profile</option><option value="Adobe RGB (1998)">Adobe RGB (1998)</option><option value="sRGB Profile">sRGB Profile</option><option value="ProPhoto RGB">ProPhoto RGB</option><option value="e-sRGB">e-sRGB</option><option value="Other / Specify in the brief">Other / Specify in the brief</option>
 </select>
 </label>
+</div>
 <p class="rate-hint">Please specify the technical requirements for your final image delivery.</p>
 <h3 class="rate-step">STEP 3</h3>
 <h2 class="rate-form-heading">Retouching Requirements</h2>
-<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="Basic RAW Development (Camera RAW or Capture One)"/> Basic RAW Development (Camera RAW or Capture One)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)"/> Removing Unwanted Color Casts (on the whites of the eyes, on the teeth)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Balancing (for example, reduce redness in hands/fingers)"/> Skin Tone Balancing (for example, reduce redness in hands/fingers)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)"/> Even Out Body Exposure (for example, when the neck and chest area lighter in relation to the face)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Brightening Eye Whites and Teeth"/> Brightening Eye Whites and Teeth</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Correction by Reference"/> Color Correction by Reference</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="No-Reference Color Image Grading (options to our taste)"/> No-Reference Color Image Grading (options to our taste)</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustment"/> Selective Color Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Changing the color on individual elements"/> Changing the color on individual elements</label>
-<label class="rate-check"><input type="checkbox" name="colorwork" value="Working with Light Accents: Highlighting the Main Object by Brightness Adjusting"/> Working with Light Accents: Highlighting the Main Object by Brightness Adjusting</label>
+<div class="rate-reqs">
+<fieldset class="rate-fieldset"><legend>Color &amp; Tone Adjustments</legend><label class="rate-check"><input type="checkbox" name="colorwork" value="RAW Processing (Camera Raw / Capture One)"/> RAW Processing (Camera Raw / Capture One)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Cast Removal (neutralizing unwanted color shifts)"/> Color Cast Removal (neutralizing unwanted color shifts)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Skin Tone Refinement (balancing uneven skin tones and redness)"/> Skin Tone Refinement (balancing uneven skin tones and redness)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Body Exposure Correction (balancing light across the body)"/> Body Exposure Correction (balancing light across the body)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Eye &amp; Teeth Brightening"/> Eye &amp; Teeth Brightening</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Color Matching to Reference"/> Color Matching to Reference</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Creative Color Grading (without a reference)"/> Creative Color Grading (without a reference)</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Selective Color Adjustments"/> Selective Color Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Individual Object Color Changes"/> Individual Object Color Changes</label>
+<label class="rate-check"><input type="checkbox" name="colorwork" value="Light &amp; Shadow Adjustments (enhancing the main subject)"/> Light &amp; Shadow Adjustments (enhancing the main subject)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain, and Scratch Removal"/> Dust, Stain, and Scratch Removal</label>
-<label class="rate-check"><input type="checkbox" name="background" value="Clipping mask"/> Clipping mask</label>
+<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="Garment Cleanup (removing lint, dust and loose threads)"/> Garment Cleanup (removing lint, dust and loose threads)</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle &amp; Crease Reduction"/> Wrinkle &amp; Crease Reduction</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Garment Shape Refinement"/> Garment Shape Refinement</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Fit Adjustments"/> Clothing Fit Adjustments</label>
+<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Replacement Using Additional Images or Plates"/> Clothing Replacement Using Additional Images or Plates</label>
+</fieldset>
+<fieldset class="rate-fieldset"><legend>Background Retouching</legend><label class="rate-check"><input type="checkbox" name="background" value="Dust, Stain &amp; Scratch Removal"/> Dust, Stain &amp; Scratch Removal</label>
+<label class="rate-check"><input type="checkbox" name="background" value="Clipping Path / Precise Object Masking"/> Clipping Path / Precise Object Masking</label>
 <label class="rate-check"><input type="checkbox" name="background" value="Background Replacement"/> Background Replacement</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)"/> Adjust and Change Facial Features (Eyes, Brows, Nose, Lips, Teeth Shape Correction)</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Makeup Correction"/> Makeup Correction</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Manicure Adjustment"/> Manicure Adjustment</label>
-<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)"/> Hair Retouching: (Stray Hair Cleanup, Fill Hair Gaps)</label>
+<fieldset class="rate-fieldset"><legend>Model Retouching</legend><label class="rate-check"><input type="checkbox" name="model" value="Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)"/> Facial Feature Refinement (eyes, eyebrows, nose, lips and teeth)</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Makeup Refinement"/> Makeup Refinement</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Nail &amp; Manicure Corrections"/> Nail &amp; Manicure Corrections</label>
+<label class="rate-check"><input type="checkbox" name="model" value="Hair Retouching (flyaway removal and hair volume enhancement)"/> Hair Retouching (flyaway removal and hair volume enhancement)</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Clothing Retouching</legend><label class="rate-check"><input type="checkbox" name="clothing" value="General Cleaning (Pilling, Dust, Threads)"/> General Cleaning (Pilling, Dust, Threads)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Wrinkle/Crease Smoothing"/> Wrinkle/Crease Smoothing</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Shape Correction"/> Shape Correction</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Fix Clothing, Move Clothing (closer to the body)"/> Fix Clothing, Move Clothing (closer to the body)</label>
-<label class="rate-check"><input type="checkbox" name="clothing" value="Clothing Part Replacement from Additional Shots/Plates"/> Clothing Part Replacement from Additional Shots/Plates</label>
+<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Cleanup (removing dust, marks and scratches)"/> Shoe Cleanup (removing dust, marks and scratches)</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Sole Tape Removal"/> Sole Tape Removal</label>
+<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Match the Model&#39;s Foot Proportions"/> Shoe Resizing to Match the Model&#39;s Foot Proportions</label>
 </fieldset>
-<fieldset class="rate-fieldset"><legend>Footwear Retouching</legend><label class="rate-check"><input type="checkbox" name="footwear" value="General Cleaning (Dust, Scratches)"/> General Cleaning (Dust, Scratches)</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Tape Removal from Shoe Sole"/> Tape Removal from Shoe Sole</label>
-<label class="rate-check"><input type="checkbox" name="footwear" value="Shoe Resizing to Models Foot Size"/> Shoe Resizing to Models Foot Size</label>
-</fieldset>
+</div>
 <h3 class="rate-step">STEP 4</h3>
 <label class="rate-field">Brief
 <textarea class="_4ORMAT_module_contact_input" name="Brief" rows="5" maxlength="8000" placeholder="Tell us about the project"></textarea>
