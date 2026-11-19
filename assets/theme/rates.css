@@ -545,7 +545,7 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
   grid-template-columns: 1fr;
   gap: 16px 28px;
   align-items: start;
-  margin: 0 0 12px;
+  margin: 12px 0 12px;
 }
 
 .rate-reqs-col {
