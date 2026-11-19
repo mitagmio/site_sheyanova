@@ -557,13 +557,12 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Fashion/Lookbook/Editorial: left = color + clothing; right = background + model + footwear */
-  .rate-reqs > .rate-fieldset:nth-child(1),
-  .rate-reqs > .rate-fieldset:nth-child(2) {
+  /* Explicit columns from form schema (Background always in column 2 on fashion mockup) */
+  .rate-reqs > .rate-fieldset[data-col="1"] {
     grid-column: 1;
   }
 
-  .rate-reqs > .rate-fieldset:nth-child(n + 3) {
+  .rate-reqs > .rate-fieldset[data-col="2"] {
     grid-column: 2;
   }
 }
