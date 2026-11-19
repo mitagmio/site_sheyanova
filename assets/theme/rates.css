@@ -543,9 +543,20 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
 .rate-reqs {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px 28px;
+  gap: 16px 28px;
   align-items: start;
   margin: 0 0 12px;
+}
+
+.rate-reqs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.rate-reqs-col > .rate-fieldset {
+  margin: 0;
 }
 
 @media (min-width: 900px) {
@@ -555,15 +566,6 @@ body.rates .rate-banner.rate-banner--text-backdrop .rate-banner__caption {
 
   .rate-reqs {
     grid-template-columns: 1fr 1fr;
-  }
-
-  /* Explicit columns from form schema (Background always in column 2 on fashion mockup) */
-  .rate-reqs > .rate-fieldset[data-col="1"] {
-    grid-column: 1;
-  }
-
-  .rate-reqs > .rate-fieldset[data-col="2"] {
-    grid-column: 2;
   }
 }
 
